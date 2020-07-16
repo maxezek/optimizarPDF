@@ -15,7 +15,7 @@ o bien en entorno gráfico usar el menu de contexto **clic botón derecho > Prop
 Modo de uso es bastante sencillo. Desde el navegador de archivos CAJA se selecciona el fichero PDF (o ficheros) y con **clic botón derecho > Scripts > OptimizarPDF**
 
 
-##Versión tonta de escritorio
+## Versión tonta de escritorio
 
 Se trata simplemente de una ventana en zenity explicando que hay que hacer.
 
