@@ -6,7 +6,7 @@ En **MAX** disponemos de ghostscript y zenity.
 
 Se puede incluir en **CAJA** como un script.
 
-Para su instalación hay que descargar el fichero **OptimizarPDF** a la carpeta oculta de usuario **~/.local/share/caja/scripts **y darle permisos de ejecución en un terminal:
+Para su instalación hay que descargar el fichero **OptimizarPDF** a la carpeta oculta de usuario **~/.config/caja/scripts** y darle permisos de ejecución en un terminal:
 
 	chmod +x ~/.config/caja/scripts/OptimizarPDF
 
