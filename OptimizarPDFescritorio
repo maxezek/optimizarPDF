@@ -16,7 +16,7 @@ normal=$(tput sgr0)
 		zenity  --info \
                 --width=500 \
                 --title="Compresor de archivos PDF en navegador de archivos" \
-                --window-icon="/home/madrid/ownCloud/Documents/max/OptimizarPDF.png" \
+                --window-icon="OptimizarPDF.png" \
                 --text="Se va abrir una ventana de selección de archivos:\n \n 1.- Elija los archivos a comprimir y pulse ${bold}botón derecho${normal}.\n \n 2.- Elija ${bold}Scripts${normal} y ${bold}OptimizarPDF${normal}.\n \n El proceso de compresión durará más o menos en función\n del tamaño del archivo y el número de ellos.\n \n ${bold}Tenga paciencia. Suele ser breve${normal}" 
 
         /usr/bin/caja ~/Documentos
