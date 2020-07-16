@@ -1,0 +1,22 @@
+#! /bin/bash
+
+# AUTHOR:		Ezequiel Cabrillo García <ezequiel.cabrillo@educa.madrid.org>
+# NAME:			OptimizarPDF
+# DESCRIPTION:	Una ventana informativa para enseñar a comprimir PDF con caja y un script
+# REQUIRES:		ghostscript, poppler-utils, zenity, sed, python-notify (optional)
+# LICENSE:		GNU GPL v3 (http://www.gnu.org/licenses/gpl.html)
+# WEBSITE:		https://github.com/maxezek/optimizarPDF
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+# Pedimos al usuario que seleccione los archivos a comprimir
+             
+		zenity  --info \
+                --width=500 \
+                --title="Compresor de archivos PDF en navegador de archivos" \
+                --window-icon="/home/madrid/ownCloud/Documents/max/OptimizarPDF.png" \
+                --text="Se va abrir una ventana de selección de archivos:\n \n 1.- Elija los archivos a comprimir y pulse ${bold}botón derecho${normal}.\n \n 2.- Elija ${bold}Scripts${normal} y ${bold}OptimizarPDF${normal}.\n \n El proceso de compresión durará más o menos en función\n del tamaño del archivo y el número de ellos.\n \n ${bold}Tenga paciencia. Suele ser breve${normal}" 
+
+        /usr/bin/caja ~/Documentos
