@@ -10,7 +10,7 @@
 # Cambia Caja por nautilus
 
 
-VERSION="1.5"
+VERSION="0.1"
 COMPRESSPDF_BATCH_ABORT_ERR=115
 
 # Messages
@@ -213,7 +213,7 @@ fi
 # Check if Ghostscript is installed
 if ! GS=$(which gs)
 then
-	$ZENITY --error --title="Compress PDF $VERSION" --text="$error_ghostscript"
+	$ZENITY --error --title="OptimizarPDF $VERSION" --text="$error_ghostscript"
 	exit 1
 fi
 
@@ -222,7 +222,7 @@ fi
 # Check if the user has selected any files
 if [ "x$CAJA_SCRIPT_SELECTED_FILE_PATHS" = "x"  -o  "$#" = "0" ] # we double check. Remove the first part if you plan to manually invoke the script
 then
-	$ZENITY --error --title="Compress PDF $VERSION" --text="$error_nofiles"
+	$ZENITY --error --title="OptimizarPDF $VERSION" --text="$error_nofiles"
 	exit 1
 fi
 
@@ -231,7 +231,7 @@ INPUT=("$@")
 N=("$#")
 if [ "${#INPUT[@]}" != "$N" ] # comparing the number of arguments the script is given with what it can count
 then
-	$ZENITY --error --title="Compress PDF $VERSION" # if we arrive here, there is something very messed
+	$ZENITY --error --title="OptimizarPDF $VERSION" # if we arrive here, there is something very messed
 	exit 1
 fi
 
@@ -243,14 +243,14 @@ do
 done
 if [ "x$NOT_PDF" != x ]
 then
-	$ZENITY --error --title="Compress PDF $VERSION" --text="$error_nopdf"
+	$ZENITY --error --title="OptimizarPDF $VERSION" --text="$error_nopdf"
 	exit 1
 fi
 
 # Everything is OK. We can go on.
 
 # Ask the user to select an output format
-selected_level=$($ZENITY --list --title="Compress PDF "$VERSION"" --text "$label_level" --radiolist --column "" --column "$optimization_level" TRUE "$level_default" FALSE "$level_screen" FALSE "$level_low" FALSE "$level_high" FALSE "$level_color" --height 250 --width 400)
+selected_level=$($ZENITY --list --title="OptimizarPDF "$VERSION"" --text "$label_level" --radiolist --column "" --column "$optimization_level" TRUE "$level_default" FALSE "$level_screen" FALSE "$level_low" FALSE "$level_high" FALSE "$level_color" --height 250 --width 400)
 if [ "$?" != "0"  -o  "x$selected_level" = x ]; then exit 1; fi
 
 # Select the optimization level to use
