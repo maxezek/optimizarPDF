@@ -8,7 +8,7 @@ Se puede incluir en **CAJA** como un script.
 
 Para su instalación hay que descargar el fichero **OptimizarPDF** a la carpeta oculta de usuario **~/.local/share/caja/scripts **y darle permisos de ejecución en un terminal:
 
-	chmod +x ~/.local/share/nautilus/scripts/OptimizarPDF
+	chmod +x ~/.local/share/caja/scripts/OptimizarPDF
 
 o bien en entorno gráfico usar el menu de contexto **clic botón derecho > Propiedades > Permisos** y ahí habilitar **Permitir ejecutar al archivo como un programa**
 
