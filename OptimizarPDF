@@ -61,7 +61,7 @@ case $LANG in
 		# Spanish (es-AR) by Eduardo Battaglia
 		error_nofiles="Ningún archivo seleccionado."
 		error_noquality="Ningún nivel de optimización escogido."
-		error_ghostscript="Compress PDF necesita el paquete ghostscript, que no está instalado. Por favor instálelo e intente nuevamente."
+		error_ghostscript="OptimizarPDF necesita el paquete ghostscript, que no está instalado. Por favor instálelo e intente nuevamente."
 		label_filename="Guardar PDF como..."
 		label_level="Por favor escoja un nivel de optimización debajo."
 		optimization_level="Nivel de Optimización"
