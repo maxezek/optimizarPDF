@@ -37,3 +37,6 @@ El icono **OptimizarPDF.png** estaría en mismo directorio que el script.
 En este caso lo que hacemos es copiar con sudo el fichero **OptimizarPDFmenu** en **/usr/bin** con permiso de ejecución. Y luego con **caja-utils** instalado ir a **Inicio > Sistema > Preferencias > Visualización y comportamiento > Herramienta de configuración de las acciones de Caja**
 
 Allí seguir estos dos pantallazos **¡ojo! cambiar OptimizarPDF por OptimizarPDFmenu**
+
+![pantallazo1](https://github.com/maxezek/optimizarPDF/blob/master/Captura%20de%20pantalla%20-2020-07-21%2018-35-07.png)
+![pantallazo2](https://github.com/maxezek/optimizarPDF/blob/master/Captura%20de%20pantalla%20-2020-07-21%2018-35-57.png)
