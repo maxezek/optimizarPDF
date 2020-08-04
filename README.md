@@ -1,3 +1,5 @@
+![LogoOptimizarPDF](https://github.com/maxezek/optimizarPDF/blob/master/OptimizarPDF.png) 
+
 # OptimizarPDF
 
 **OptimizarPDF** es un fork de Compress PDF (script for nautilus by Ricardo Ferreira https://bazaar.launchpad.net/~oriolpont/compress-pdf/mine/files
