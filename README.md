@@ -43,7 +43,7 @@ Allí seguir estos dos pantallazos **¡ojo! cambiar OptimizarPDF por OptimizarPD
 
 ## Versión lista de escritorio
 
-Si ya tengo una versión escirta en Python que convierte el script en un programita que aparece en la sección Oficina del menú de MAX. La podéis descargar desde:
+Y tengo una versión escrita en Python que convierte el script en un programita que aparece en la sección Oficina del menú de MAX. La podéis descargar desde:
 
 https://github.com/maxezek/optimizarPDF/releases
 
