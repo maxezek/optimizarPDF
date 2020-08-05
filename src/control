@@ -1,0 +1,9 @@
+Package: optimizarpdf
+Version: 0.0.1
+Maintainer: Ezequiel Cabrillo García <ezequiel.cabrillo@educa.madrid.org>
+Section: python
+Architecture: all
+Priority: optional
+Depends: python3 (>=3.5), bash (>=4.3), zenity (>=3.18)
+Description: Compresor de PDF
+ Compresor de PDF basado en compress-pdf

@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+# -*- Mode: Python; coding: utf-8; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*- 
+#
+# main.py
+# Copyright (C) 2020 Ezequiel Cabrillo García <ezequiel.cabrillo@educa.madrid.org>
+# 
+# OptimizarPDF is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# OptimizarPDF is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License along
+# with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import os
+import sys
+import subprocess
+from gi import require_version as gi_require_version
+gi_require_version('Gtk', '3.0')
+from gi.repository import Gtk, GdkPixbuf, Gdk
+
+
+NAME = 'OptimizarPDF'
+__version__ = '0.0.1'
+VERSIONSTR = '{} v. {}'.format(NAME, __version__)
+
+
+class EligeFichero(Gtk.FileChooserDialog):
+	""" Ventana de selección del archivo PDF a comprimir. """
+
+	def __init__(self):
+		Gtk.FileChooserDialog.__init__(self)
+		self.builder = Gtk.Builder()
+		gladefile = "/usr/share/optimizarpdf/ui/ventanaPDF.ui"
+		if not os.path.exists(gladefile):
+			 # Comprueba si el archivo glade existe.
+			 gladefile = os.path.join(sys.path[0], gladefile)
+
+		try:
+			self.builder.add_from_file(gladefile)
+		except Exception as ex:
+			print('\\nError de construcción de la ventana!\\n{}'.format(ex))
+			sys.exit(1)
+
+		# generamos la ventana de interfaz de selección de fichero
+		self.VentanaFichero = self.builder.get_object("VFichero")
+
+		self.builder.connect_signals(self)
+		self.VentanaFichero.connect("delete-event", Gtk.main_quit)
+		self.VentanaFichero.show_all()
+
+		Aceptar1 	= self.builder.get_object("BVFAceptar")
+		Aceptar1.connect("clicked", self.SeleccionFichero)
+
+		Cancelar1 	= self.builder.get_object("BVFicheroCancelar")
+		Cancelar1.connect("clicked", self.clickOnCancelar)
+
+	def SeleccionFichero(self,action):
+		global elegido
+		elegido = self.VentanaFichero.get_filename()
+		gui2 = EligeNivel()
+		self.VentanaFichero.destroy()
+		return elegido
+
+
+	def clickOnCancelar(self, Cancelar):
+		Gtk.main_quit()
+
+class EligeNivel(Gtk.Dialog):
+	""" Ventana de selección del nivel de compresión. """
+
+	def __init__(self):
+		Gtk.Dialog.__init__(self)
+		self.builder = Gtk.Builder()
+		gladefile = "/usr/share/optimizarpdf/ui/optimizarpdf.ui"
+		if not os.path.exists(gladefile):
+			# Comprueba si el archivo glade existe.
+			gladefile = os.path.join(sys.path[0], gladefile)
+
+		try:
+			self.builder.add_from_file(gladefile)
+		except Exception as ex:
+			print('\\nError de construcción de la ventana de nivel!\\n{}'.format(ex))
+			sys.exit(1)
+
+		# generamos la ventana de interfaz de selección de nivel
+		self.VentanaPrincipal 	= self.builder.get_object("Vseleccion")
+
+		self.builder.connect_signals(self)
+		self.VentanaPrincipal.connect("delete-event", Gtk.main_quit)
+		self.VentanaPrincipal.show_all()
+		self.fila = self.builder.get_object("ComboNivel")
+		self.fila.connect("changed",self.seleccionnivel)
+
+		Aceptar 	= self.builder.get_object("BotonAceptar")
+		Aceptar.connect("clicked", self.clickOnAceptar)
+
+		Cancelar 	= self.builder.get_object("BotonCancelar")
+		Cancelar.connect("clicked", self.clickOnCancelar)
+
+	def seleccionnivel(self, row):
+		print("Se ha elegido un nivel")
+
+	def clickOnAceptar(self, Aceptar):
+		accion = "OptimizarPDF"
+		fichero = elegido
+		combo = self.fila.get_active_id()
+		if combo == "1":
+			subprocess.call(['bash', accion, fichero, '/default'])
+		if combo == "2":
+			subprocess.call(['bash', accion, fichero, '/screen'])
+		if combo == "3":
+			subprocess.call(['bash', accion, fichero, '/ebook'])
+		if combo == "4":
+			subprocess.call(['bash', accion, fichero, '/printer'])
+		if combo == "5":
+			subprocess.call(['bash', accion, fichero, '/prepress'])
+		self.VentanaPrincipal.destroy()
+
+	def clickOnCancelar(self, Cancelar):
+		Gtk.main_quit()
+
+
+def main():
+	""" Main entry point for the program. """
+	gui = EligeFichero()  # noqa
+	return Gtk.main()
+
+
+if __name__ == '__main__':
+	mainret = main()
+	sys.exit(mainret)

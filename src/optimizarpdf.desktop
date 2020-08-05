@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=optimizarpdf
+Version=1.0
+Exec=optimizarpdf %U
+Comment=Compresor de PDF
+Icon=/usr/share/icons/OptimizarPDF.png
+Type=Application
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
+Categories=Office;
