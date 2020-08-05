@@ -2,7 +2,7 @@
 
 # OptimizarPDF
 
->El README sigue una estructura cronológica paso a paso desde el primer descubrimiento y su adaptación a MAX como ya un programa en python. EN el futuro se cambiará y se usará la wiki
+>El README sigue una estructura cronológica paso a paso desde el primer descubrimiento y su adaptación a MAX como ya un programa en python. En el futuro se cambiará y se usará la wiki
 
 
 **OptimizarPDF** es un fork de Compress PDF (script for nautilus by Ricardo Ferreira https://bazaar.launchpad.net/~oriolpont/compress-pdf/mine/files
