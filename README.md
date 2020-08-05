@@ -40,3 +40,12 @@ Allí seguir estos dos pantallazos **¡ojo! cambiar OptimizarPDF por OptimizarPD
 
 ![pantallazo1](https://github.com/maxezek/optimizarPDF/blob/master/Captura%20de%20pantalla%20-2020-07-21%2018-35-07.png)
 ![pantallazo2](https://github.com/maxezek/optimizarPDF/blob/master/Captura%20de%20pantalla%20-2020-07-21%2018-35-57.png)
+
+## Versión lista de escritorio
+
+Si ya tengo una versión escirta en Python que convierte el script en un programita que aparece en la sección Oficina del menú de MAX. La podéis descargar desde:
+
+https://github.com/maxezek/optimizarPDF/releases
+
+Debería funcionar en una MAX 9 de 32 bits y luego en todas las superiores de 64 bits.
+
